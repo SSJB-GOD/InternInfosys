@@ -30,7 +30,7 @@ public class StudentsDetails {
     }
 
     //create
-    @PostMapping("/student")
+    @PostMapping("/students")
     public void addStudents(@RequestBody Student student){
         currentId++;
         student.setId(currentId);
