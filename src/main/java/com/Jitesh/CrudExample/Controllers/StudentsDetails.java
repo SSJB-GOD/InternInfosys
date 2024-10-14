@@ -30,7 +30,7 @@ public class StudentsDetails {
     }
 
     //create
-    @PostMapping("/student")
+    @PostMapping("/students")
     public void addStudents(@RequestBody Student student){
         currentId++;
         student.setId(currentId);
@@ -39,13 +39,13 @@ public class StudentsDetails {
 
     //read
 //    get all students
-    @GetMapping("/student")
+    @GetMapping("/students")
     public List<Student> getAllStudents(){
         return new ArrayList<>( students.values());
     }
 
 //    get students by id
-    @GetMapping("/student/{id}")
+    @GetMapping("/students/{id}")
     public Student getStudentsById(@PathVariable int id){
         return students.get(id);
     }
@@ -53,7 +53,7 @@ public class StudentsDetails {
 
     //update
 //    update students by id
-    @PutMapping("/student/{id}")
+    @PutMapping("/students/{id}")
     public String updateStudents(@PathVariable int id, @RequestBody Student updatedStudent){
 
                 if(students.containsKey(id)) {
@@ -67,7 +67,7 @@ public class StudentsDetails {
 
     //Delete
 //    Delete students by id
-    @DeleteMapping("/student/{id}")
+    @DeleteMapping("/students/{id}")
     public String removeStudentById(@PathVariable int id, Student removedStudent){
 
             if(students.containsKey(id)){
